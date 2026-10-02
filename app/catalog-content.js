@@ -87,20 +87,38 @@ export const catalogStyle = `
     max-width: 46ch;
     margin: 0 0 8px;
   }
-  .hero-photo {
+  /* ---------- HERO BANNER (rotativo) ---------- */
+  .hero-banner {
     position: relative;
     align-self: stretch;
+    overflow: hidden;
+    border-radius: 4px 4px 0 0;
+    min-height: 320px;
   }
-  .hero-photo img {
+  .hero-banner-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+  .hero-banner-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.7s ease;
+    pointer-events: none;
+  }
+  .hero-banner-slide.is-active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .hero-banner-slide img {
     width: 100%;
     height: 100%;
     min-height: 320px;
     object-fit: cover;
     display: block;
-    border-radius: 4px 4px 0 0;
   }
-  .hero-photo::after {
-    content: "TOP Performance";
+  .hero-banner-caption {
     position: absolute;
     left: 16px;
     bottom: 14px;
@@ -113,7 +131,55 @@ export const catalogStyle = `
     background: rgba(23, 17, 12, 0.55);
     padding: 6px 10px;
     border-radius: 3px;
+    pointer-events: none;
+    transition: opacity 0.4s;
   }
+  .hero-banner-dots {
+    position: absolute;
+    bottom: 14px;
+    right: 14px;
+    display: flex;
+    gap: 6px;
+    align-items: center;
+  }
+  .hero-banner-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: rgba(243,234,217,0.45);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+  }
+  .hero-banner-dot.is-active {
+    background: #f3ead9;
+    transform: scale(1.25);
+  }
+  .hero-banner-prev,
+  .hero-banner-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(23,17,12,0.45);
+    border: none;
+    color: #f3ead9;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+    z-index: 2;
+  }
+  .hero-banner-prev { left: 10px; }
+  .hero-banner-next { right: 10px; }
+  .hero-banner-prev:hover,
+  .hero-banner-next:hover { background: rgba(23,17,12,0.75); }
   .collections-nav {
     display: flex;
     flex-wrap: wrap;
@@ -499,8 +565,36 @@ export const catalogHtml = `<div class="hero">
         <h1>Para quem vive<br/><em>além</em> do comum.</h1>
         <p class="lede">Catálogo da coleção — 28 modelos em acetato premium e metal, reunidos em quatro linhas: clássico, streetwear, praia e esportivo.</p>
       </div>
-      <div class="hero-photo">
-        <img src="/images/p9_performance.jpg" alt="Óculos de sol TOP Performance, lente vermelha espelhada, ao pôr do sol" />
+      <div class="hero-banner" id="heroBanner">
+        <div class="hero-banner-slide is-active">
+          <img src="/images/p9_performance.jpg" alt="TOP Performance — lente vermelha espelhada" loading="eager" />
+          <span class="hero-banner-caption">TOP Performance</span>
+        </div>
+        <div class="hero-banner-slide">
+          <img src="/images/social_alok.jpg" alt="Modelo Alok — estilo praiano" loading="lazy" />
+          <span class="hero-banner-caption">Modelo Alok</span>
+        </div>
+        <div class="hero-banner-slide">
+          <img src="/images/social_praia.jpg" alt="Coleção Praia — lifestyle de verão" loading="lazy" />
+          <span class="hero-banner-caption">Coleção Praia</span>
+        </div>
+        <div class="hero-banner-slide">
+          <img src="/images/social_ciclista.jpg" alt="Linha Esportivo — para quem não para" loading="lazy" />
+          <span class="hero-banner-caption">Linha Esportivo</span>
+        </div>
+        <div class="hero-banner-slide">
+          <img src="/images/social_carro_preto.jpg" alt="TOP Sunglass — estilo urbano" loading="lazy" />
+          <span class="hero-banner-caption">Estilo Urbano</span>
+        </div>
+        <button class="hero-banner-prev" id="bannerPrev" aria-label="Foto anterior">&#8249;</button>
+        <button class="hero-banner-next" id="bannerNext" aria-label="Próxima foto">&#8250;</button>
+        <div class="hero-banner-dots" id="bannerDots">
+          <button class="hero-banner-dot is-active" aria-label="Foto 1"></button>
+          <button class="hero-banner-dot" aria-label="Foto 2"></button>
+          <button class="hero-banner-dot" aria-label="Foto 3"></button>
+          <button class="hero-banner-dot" aria-label="Foto 4"></button>
+          <button class="hero-banner-dot" aria-label="Foto 5"></button>
+        </div>
       </div>
     </div>
     <ul class="features">

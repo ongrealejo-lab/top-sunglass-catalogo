@@ -4,6 +4,52 @@ import { useEffect } from "react";
 import { catalogStyle, catalogHtml } from "./catalog-content";
 
 export default function Home() {
+  // ── HERO BANNER ROTATIVO ──────────────────────────────
+  useEffect(() => {
+    const banner = document.getElementById("heroBanner");
+    if (!banner) return;
+
+    const slides = Array.from(banner.querySelectorAll(".hero-banner-slide"));
+    const dots   = Array.from(banner.querySelectorAll(".hero-banner-dot"));
+    const prev   = document.getElementById("bannerPrev");
+    const next   = document.getElementById("bannerNext");
+    let current  = 0;
+    let timer;
+
+    function goTo(idx) {
+      slides[current].classList.remove("is-active");
+      dots[current].classList.remove("is-active");
+      current = (idx + slides.length) % slides.length;
+      slides[current].classList.add("is-active");
+      dots[current].classList.add("is-active");
+    }
+
+    function startAuto() {
+      timer = setInterval(() => goTo(current + 1), 4000);
+    }
+
+    function resetAuto() {
+      clearInterval(timer);
+      startAuto();
+    }
+
+    prev?.addEventListener("click", () => { goTo(current - 1); resetAuto(); });
+    next?.addEventListener("click", () => { goTo(current + 1); resetAuto(); });
+    dots.forEach((dot, i) => dot.addEventListener("click", () => { goTo(i); resetAuto(); }));
+
+    // swipe support
+    let touchStartX = 0;
+    banner.addEventListener("touchstart", (e) => { touchStartX = e.touches[0].clientX; }, { passive: true });
+    banner.addEventListener("touchend", (e) => {
+      const diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) { goTo(current + (diff > 0 ? 1 : -1)); resetAuto(); }
+    });
+
+    startAuto();
+    return () => clearInterval(timer);
+  }, []);
+
+  // ── LIGHTBOX ──────────────────────────────────────────
   useEffect(() => {
     const lightbox = document.getElementById("lightbox");
     const lightboxImg = document.getElementById("lightboxImg");
