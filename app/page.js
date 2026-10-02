@@ -16,12 +16,24 @@ export default function Home() {
     let current  = 0;
     let timer;
 
+    const overlay = banner.querySelector(".hero-banner-overlay");
+
     function goTo(idx) {
       slides[current].classList.remove("is-active");
       dots[current].classList.remove("is-active");
       current = (idx + slides.length) % slides.length;
       slides[current].classList.add("is-active");
       dots[current].classList.add("is-active");
+      if (overlay) {
+        overlay.style.opacity = slides[current].hasAttribute("data-no-overlay") ? "0" : "1";
+        overlay.style.pointerEvents = slides[current].hasAttribute("data-no-overlay") ? "none" : "";
+      }
+    }
+
+    // set initial state
+    if (overlay && slides[0]?.hasAttribute("data-no-overlay")) {
+      overlay.style.opacity = "0";
+      overlay.style.pointerEvents = "none";
     }
 
     function startAuto() {

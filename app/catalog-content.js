@@ -139,6 +139,7 @@ export const catalogStyle = `
   }
   /* text overlay on top of gradient */
   .hero-banner-overlay {
+    transition: opacity 0.6s ease;
     position: absolute;
     inset: 0;
     z-index: 2;
@@ -582,8 +583,11 @@ export const catalogStyle = `
 
 export const catalogHtml = `<div class="hero">
   <div class="hero-banner" id="heroBanner">
-    <div class="hero-banner-slide is-active">
-      <img src="/images/social_carro_preto.jpg" alt="TOP Sunglass — estilo urbano" loading="eager" />
+    <div class="hero-banner-slide is-active" data-no-overlay>
+      <img src="/images/banner_pague2leve3.png" alt="Pague 2 Leve 3 — Top Sunglass" loading="eager" />
+    </div>
+    <div class="hero-banner-slide">
+      <img src="/images/social_carro_preto.jpg" alt="TOP Sunglass — estilo urbano" loading="lazy" />
     </div>
     <div class="hero-banner-slide">
       <img src="/images/social_praia.jpg" alt="Coleção Praia — lifestyle de verão" loading="lazy" />
@@ -612,6 +616,7 @@ export const catalogHtml = `<div class="hero">
       <button class="hero-banner-dot" aria-label="Foto 3"></button>
       <button class="hero-banner-dot" aria-label="Foto 4"></button>
       <button class="hero-banner-dot" aria-label="Foto 5"></button>
+      <button class="hero-banner-dot" aria-label="Foto 6"></button>
     </div>
   </div>
   <div class="hero-below">
