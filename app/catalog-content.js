@@ -47,6 +47,86 @@ export const catalogStyle = `
 
   .wrap { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
 
+  /* ---------- HEADER ---------- */
+  .site-header {
+    background: var(--ink);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+  .site-header-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    height: 58px;
+  }
+  .site-logo {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 0.04em;
+    color: #f3ead9;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .site-logo span { color: var(--gold); }
+  .header-nav {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    flex: 1;
+  }
+  .header-nav::-webkit-scrollbar { display: none; }
+  .header-nav a {
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(243,234,217,0.7);
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    white-space: nowrap;
+    transition: color 0.15s, background 0.15s;
+  }
+  .header-nav a:hover {
+    color: #f3ead9;
+    background: rgba(255,255,255,0.08);
+  }
+  .header-nav a.highlight {
+    color: var(--gold);
+    border: 1px solid rgba(166,124,51,0.5);
+  }
+  .header-nav a.highlight:hover {
+    background: rgba(166,124,51,0.15);
+  }
+  .header-wa {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #f3ead9;
+    background: #25963f;
+    padding: 7px 14px;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: filter 0.15s;
+  }
+  .header-wa:hover { filter: brightness(1.1); }
+  @media (max-width: 700px) {
+    .site-header-inner { gap: 16px; }
+    .header-wa { display: none; }
+  }
+
   /* ---------- HERO ---------- */
   .hero {
     border-bottom: 1px solid var(--line);
@@ -581,7 +661,24 @@ export const catalogStyle = `
   }
 `;
 
-export const catalogHtml = `<div class="hero">
+export const catalogHtml = `<header class="site-header">
+  <div class="site-header-inner">
+    <a href="#" class="site-logo">TOP <span>Sunglass</span></a>
+    <nav class="header-nav">
+      <a href="#classico">Clássico</a>
+      <a href="#streetwear">Streetwear</a>
+      <a href="#praia">Praia</a>
+      <a href="#esportivo">Esportivo</a>
+      <a href="#social">Lookbook</a>
+      <a href="#classico" class="highlight">🔥 Pague 2, Leve 3</a>
+    </nav>
+    <a href="https://wa.me/5511999999999" class="header-wa" target="_blank" rel="noopener">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.121 1.531 5.856L.057 23.852a.5.5 0 0 0 .614.614l6.057-1.49A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.695-.498-5.248-1.37l-.373-.214-3.865.95.978-3.79-.234-.388A9.964 9.964 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+      WhatsApp
+    </a>
+  </div>
+</header>
+<div class="hero">
   <div class="hero-banner" id="heroBanner">
     <div class="hero-banner-slide is-active" data-no-overlay>
       <img src="/images/banner_pague2leve3.png" alt="Pague 2 Leve 3 — Top Sunglass" loading="eager" />
