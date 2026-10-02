@@ -685,62 +685,86 @@ export const catalogStyle = `
     color: var(--surface);
   }
 
-  /* ---------- SOCIAL ---------- */
-  .social {
+  /* ---------- DEPOIMENTOS ---------- */
+  .depoimentos {
     padding: 54px 0 10px;
   }
-  .social-head {
+  .depoimentos-head {
     border-top: 1px solid var(--line);
     padding-top: 22px;
-    margin-bottom: 28px;
+    margin-bottom: 32px;
   }
-  .social-head h2 {
+  .depoimentos-head h2 {
     font-family: 'Fraunces', serif;
     font-weight: 600;
     font-size: 34px;
     margin: 0 0 6px;
   }
-  .social-head p {
+  .depoimentos-head p {
     margin: 0;
     color: var(--ink-muted);
     font-size: 15px;
     max-width: 60ch;
   }
-  .social-grid {
+  .depoimentos-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 18px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
   }
-  .social-card {
-    position: relative;
-    border-radius: 6px;
-    overflow: hidden;
-    aspect-ratio: 4 / 5;
+  .dep-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 24px 22px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .dep-stars {
+    color: var(--gold);
+    font-size: 17px;
+    letter-spacing: 2px;
+  }
+  .dep-text {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--ink);
+    flex: 1;
+    margin: 0;
+  }
+  .dep-text::before { content: '\201C'; }
+  .dep-text::after  { content: '\201D'; }
+  .dep-author {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 4px;
+  }
+  .dep-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
     background: var(--surface-2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
   }
-  .social-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-  .social-card figcaption {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    padding: 10px 12px;
-    font-size: 12.5px;
+  .dep-name {
     font-weight: 700;
-    letter-spacing: 0.02em;
-    color: #f3ead9;
-    background: linear-gradient(to top, rgba(17,12,8,0.75), rgba(17,12,8,0));
+    font-size: 14px;
+    color: var(--ink);
+  }
+  .dep-where {
+    font-size: 12.5px;
+    color: var(--ink-muted);
   }
   @media (max-width: 900px) {
-    .social-grid { grid-template-columns: repeat(2, 1fr); }
+    .depoimentos-grid { grid-template-columns: repeat(2, 1fr); }
   }
   @media (max-width: 560px) {
-    .social-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+    .depoimentos-grid { grid-template-columns: 1fr; }
   }
 
   /* ---------- FOOTER ---------- */
@@ -1560,24 +1584,86 @@ export const catalogHtml = `<div class="announce-bar">Aproveite: comprando a par
     </section>
 
   
-    <section class="social">
-      <div class="social-head">
-        <h2>TOP em ação</h2>
-        <p>Da estrada ao pedal, do carro à praia — a coleção no dia a dia de quem usa.</p>
+    <section class="depoimentos">
+      <div class="depoimentos-head">
+        <h2>O que estão falando</h2>
+        <p>Quem comprou, aprovou. Veja o que nossos clientes dizem sobre a TOP Sunglass.</p>
       </div>
-      <div class="social-grid"><div class="social-card">
-      <img src="/images/social_alok.jpg" alt="Alok usando óculos TOP Sunglass" loading="lazy" />
-      <figcaption>Alok</figcaption>
-    </div><div class="social-card">
-      <img src="/images/social_carro_preto.jpg" alt="No dia a dia usando óculos TOP Sunglass" loading="lazy" />
-      <figcaption>No dia a dia</figcaption>
-    </div><div class="social-card">
-      <img src="/images/social_ciclista.jpg" alt="Ciclismo usando óculos TOP Sunglass" loading="lazy" />
-      <figcaption>Ciclismo</figcaption>
-    </div><div class="social-card">
-      <img src="/images/social_praia.jpg" alt="Ensaio TOP usando óculos TOP Sunglass" loading="lazy" />
-      <figcaption>Ensaio TOP</figcaption>
-    </div></div>
+      <div class="depoimentos-grid">
+
+        <div class="dep-card">
+          <div class="dep-stars">★★★★★</div>
+          <p class="dep-text">Chegou super rápido e o acabamento é incrível. Parece óculos de R$ 300 pagando muito menos. Já indiquei pra todo mundo!</p>
+          <div class="dep-author">
+            <div class="dep-avatar">😎</div>
+            <div>
+              <div class="dep-name">Lucas M.</div>
+              <div class="dep-where">Santo André, SP</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dep-card">
+          <div class="dep-stars">★★★★★</div>
+          <p class="dep-text">Comprei 2 e levei 3, melhor negócio que já fiz! Dei um de presente pra minha namorada e ela amou. Qualidade top mesmo.</p>
+          <div class="dep-author">
+            <div class="dep-avatar">🕶️</div>
+            <div>
+              <div class="dep-name">Felipe R.</div>
+              <div class="dep-where">São Paulo, SP</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dep-card">
+          <div class="dep-stars">★★★★★</div>
+          <p class="dep-text">Usei no futebol, na praia e no dia a dia — ficou perfeito nos três. Proteção UV garantida e ainda fica estiloso. Recomendo!</p>
+          <div class="dep-author">
+            <div class="dep-avatar">⚽</div>
+            <div>
+              <div class="dep-name">Rodrigo T.</div>
+              <div class="dep-where">Mauá, SP</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dep-card">
+          <div class="dep-stars">★★★★★</div>
+          <p class="dep-text">Atendimento pelo WhatsApp foi excelente, tirou todas as dúvidas e o produto chegou no dia seguinte. Nota 10!</p>
+          <div class="dep-author">
+            <div class="dep-avatar">🙌</div>
+            <div>
+              <div class="dep-name">Bruna S.</div>
+              <div class="dep-where">São Bernardo, SP</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dep-card">
+          <div class="dep-stars">★★★★★</div>
+          <p class="dep-text">Já é o segundo kit que peço. Da primeira vez comprei pro meu irmão de presente e ele gostou tanto que pedi o meu também.</p>
+          <div class="dep-author">
+            <div class="dep-avatar">🔁</div>
+            <div>
+              <div class="dep-name">Diego A.</div>
+              <div class="dep-where">ABC Paulista, SP</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="dep-card">
+          <div class="dep-stars">★★★★★</div>
+          <p class="dep-text">Lente escura com boa proteção, armação leve, não fica machucando o rosto. E o preço é justo demais pra qualidade que entrega.</p>
+          <div class="dep-author">
+            <div class="dep-avatar">✨</div>
+            <div>
+              <div class="dep-name">Mariana C.</div>
+              <div class="dep-where">Diadema, SP</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </section>
 
   <footer>
