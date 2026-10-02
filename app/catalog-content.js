@@ -854,25 +854,25 @@ export const catalogHtml = `<div class="announce-bar">Aproveite: comprando a par
 <div class="hero">
   <div class="hero-banner" id="heroBanner">
     <div class="hero-banner-slide is-active" data-no-overlay>
-      <img src="/images/banner_pague2leve3.png" alt="Pague 2 Leve 3 — Top Sunglass" loading="eager" />
+      <img src="/images/banner_01_pague2leve3.png" alt="Pague 2 Leve 3 — Top Sunglass" loading="eager" />
     </div>
     <div class="hero-banner-slide" data-no-overlay>
-      <img src="/images/banner_estilo_que_marca.png" alt="Estilo Que Marca — Top Sunglass" loading="lazy" />
+      <img src="/images/banner_02_estilo_que_marca.png" alt="Estilo Que Marca — Top Sunglass" loading="lazy" />
     </div>
     <div class="hero-banner-slide">
-      <img src="/images/social_carro_preto.jpg" alt="TOP Sunglass — estilo urbano" loading="lazy" />
+      <img src="/images/banner_03_carro_preto.jpg" alt="TOP Sunglass — estilo urbano" loading="lazy" />
     </div>
     <div class="hero-banner-slide">
-      <img src="/images/social_praia.jpg" alt="Coleção Praia — lifestyle de verão" loading="lazy" />
+      <img src="/images/banner_04_praia.jpg" alt="Coleção Praia — lifestyle de verão" loading="lazy" />
     </div>
     <div class="hero-banner-slide">
-      <img src="/images/social_ciclista.jpg" alt="Linha Esportivo — para quem não para" loading="lazy" />
+      <img src="/images/banner_05_ciclista.jpg" alt="Linha Esportivo — para quem não para" loading="lazy" />
     </div>
     <div class="hero-banner-slide">
-      <img src="/images/social_alok.jpg" alt="Modelo Alok — estilo praiano" loading="lazy" />
+      <img src="/images/banner_06_alok.jpg" alt="Modelo Alok — estilo praiano" loading="lazy" />
     </div>
     <div class="hero-banner-slide">
-      <img src="/images/p9_performance.jpg" alt="TOP Performance — lente vermelha espelhada" loading="lazy" />
+      <img src="/images/banner_07_performance.jpg" alt="TOP Performance — lente vermelha espelhada" loading="lazy" />
     </div>
     <!-- text overlay -->
     <div class="hero-banner-overlay">
