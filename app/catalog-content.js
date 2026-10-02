@@ -840,7 +840,8 @@ export const catalogStyle = `
     .grid { grid-template-columns: repeat(2, 1fr); }
   }
   @media (max-width: 560px) {
-    .hero-banner { height: 70vw; min-height: 260px; }
+    .hero-banner { height: 56vh; min-height: 300px; }
+    .hero-banner-slide img { object-fit: contain; object-position: center; background: #111; }
     .hero-banner::after { background: linear-gradient(180deg, rgba(15,10,6,0.2) 0%, rgba(15,10,6,0.75) 100%); }
     .hero-banner-overlay { justify-content: flex-end; padding: 0 20px 28px; max-width: 100%; }
     .hero h1 { font-size: clamp(28px, 8vw, 44px); }
