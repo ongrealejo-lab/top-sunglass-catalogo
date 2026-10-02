@@ -49,15 +49,7 @@ export const catalogStyle = `
 
   /* ---------- HERO ---------- */
   .hero {
-    background: linear-gradient(160deg, var(--surface-2), var(--bg) 70%);
     border-bottom: 1px solid var(--line);
-    padding: 56px 0 0;
-  }
-  .hero-inner {
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 40px;
-    align-items: end;
   }
   .brandmark {
     font-family: 'Manrope', sans-serif;
@@ -66,15 +58,18 @@ export const catalogStyle = `
     font-size: 13px;
     color: var(--gold);
     margin: 0 0 18px;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.5);
   }
   .hero h1 {
     font-family: 'Fraunces', serif;
     font-weight: 600;
-    font-size: clamp(48px, 8vw, 104px);
+    font-size: clamp(36px, 6vw, 80px);
     line-height: 0.95;
     letter-spacing: -0.01em;
-    margin: 0 0 22px;
+    margin: 0 0 20px;
     text-wrap: balance;
+    color: #f3ead9;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.6);
   }
   .hero h1 em {
     font-style: italic;
@@ -82,29 +77,39 @@ export const catalogStyle = `
     color: var(--gold);
   }
   .hero p.lede {
-    font-size: 18px;
-    color: var(--ink-muted);
-    max-width: 46ch;
-    margin: 0 0 8px;
+    font-size: 16px;
+    color: rgba(243,234,217,0.85);
+    max-width: 40ch;
+    margin: 0 0 22px;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.5);
   }
-  /* ---------- HERO BANNER (rotativo) ---------- */
+  .hero-promo {
+    display: inline-block;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #17110c;
+    background: var(--gold);
+    padding: 8px 16px;
+    border-radius: 999px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.35);
+  }
+  /* ---------- HERO BANNER full-width ---------- */
   .hero-banner {
     position: relative;
-    align-self: stretch;
-    overflow: hidden;
-    border-radius: 4px 4px 0 0;
-    min-height: 320px;
-  }
-  .hero-banner-track {
-    display: flex;
     width: 100%;
-    height: 100%;
+    height: 72vh;
+    min-height: 420px;
+    max-height: 700px;
+    overflow: hidden;
   }
   .hero-banner-slide {
     position: absolute;
     inset: 0;
     opacity: 0;
-    transition: opacity 0.7s ease;
+    transition: opacity 0.8s ease;
     pointer-events: none;
   }
   .hero-banner-slide.is-active {
@@ -114,39 +119,49 @@ export const catalogStyle = `
   .hero-banner-slide img {
     width: 100%;
     height: 100%;
-    min-height: 320px;
     object-fit: cover;
+    object-position: center top;
     display: block;
   }
-  .hero-banner-caption {
+  /* dark gradient overlay so text is legible */
+  .hero-banner::after {
+    content: '';
     position: absolute;
-    left: 16px;
-    bottom: 14px;
-    font-family: 'Manrope', sans-serif;
-    font-weight: 700;
-    font-size: 12px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: #f3ead9;
-    background: rgba(23, 17, 12, 0.55);
-    padding: 6px 10px;
-    border-radius: 3px;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      rgba(15,10,6,0.72) 0%,
+      rgba(15,10,6,0.40) 55%,
+      rgba(15,10,6,0.05) 100%
+    );
     pointer-events: none;
-    transition: opacity 0.4s;
+    z-index: 1;
+  }
+  /* text overlay on top of gradient */
+  .hero-banner-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 clamp(24px, 6vw, 100px);
+    max-width: 640px;
   }
   .hero-banner-dots {
     position: absolute;
-    bottom: 14px;
-    right: 14px;
+    bottom: 20px;
+    right: 20px;
     display: flex;
-    gap: 6px;
+    gap: 8px;
     align-items: center;
+    z-index: 3;
   }
   .hero-banner-dot {
-    width: 7px;
-    height: 7px;
+    width: 8px;
+    height: 8px;
     border-radius: 50%;
-    background: rgba(243,234,217,0.45);
+    background: rgba(243,234,217,0.4);
     border: none;
     padding: 0;
     cursor: pointer;
@@ -154,7 +169,7 @@ export const catalogStyle = `
   }
   .hero-banner-dot.is-active {
     background: #f3ead9;
-    transform: scale(1.25);
+    transform: scale(1.35);
   }
   .hero-banner-prev,
   .hero-banner-next {
@@ -164,22 +179,26 @@ export const catalogStyle = `
     background: rgba(23,17,12,0.45);
     border: none;
     color: #f3ead9;
-    width: 34px;
-    height: 34px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 20px;
     line-height: 1;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: background 0.2s;
-    z-index: 2;
+    z-index: 3;
   }
-  .hero-banner-prev { left: 10px; }
-  .hero-banner-next { right: 10px; }
+  .hero-banner-prev { left: 14px; }
+  .hero-banner-next { right: 14px; }
   .hero-banner-prev:hover,
-  .hero-banner-next:hover { background: rgba(23,17,12,0.75); }
+  .hero-banner-next:hover { background: rgba(23,17,12,0.8); }
+  .hero-below {
+    border-top: 1px solid var(--line);
+    padding: 18px 0 0;
+  }
   .collections-nav {
     display: flex;
     flex-wrap: wrap;
@@ -541,13 +560,17 @@ export const catalogStyle = `
   .wa-float svg { width: 28px; height: 28px; }
 
   @media (max-width: 900px) {
-    .hero-inner { grid-template-columns: 1fr; }
-    .hero-photo img { min-height: 220px; }
+    .hero-banner { height: 56vh; min-height: 320px; }
+    .hero-banner-overlay { max-width: 80%; }
     .grid { grid-template-columns: repeat(2, 1fr); }
   }
   @media (max-width: 560px) {
+    .hero-banner { height: 70vw; min-height: 260px; }
+    .hero-banner::after { background: linear-gradient(180deg, rgba(15,10,6,0.2) 0%, rgba(15,10,6,0.75) 100%); }
+    .hero-banner-overlay { justify-content: flex-end; padding: 0 20px 28px; max-width: 100%; }
+    .hero h1 { font-size: clamp(28px, 8vw, 44px); }
+    .hero p.lede { display: none; }
     .grid { grid-template-columns: 1fr; }
-    .hero { padding-top: 40px; }
     footer { flex-direction: column; align-items: flex-start; }
   }
 
@@ -558,58 +581,54 @@ export const catalogStyle = `
 `;
 
 export const catalogHtml = `<div class="hero">
-  <div class="wrap">
-    <div class="hero-inner">
-      <div>
-        <p class="brandmark">TOP SUNGLASS</p>
-        <h1>Para quem vive<br/><em>além</em> do comum.</h1>
-        <p class="lede">Catálogo da coleção — 28 modelos em acetato premium e metal, reunidos em quatro linhas: clássico, streetwear, praia e esportivo.</p>
-      </div>
-      <div class="hero-banner" id="heroBanner">
-        <div class="hero-banner-slide is-active">
-          <img src="/images/p9_performance.jpg" alt="TOP Performance — lente vermelha espelhada" loading="eager" />
-          <span class="hero-banner-caption">TOP Performance</span>
-        </div>
-        <div class="hero-banner-slide">
-          <img src="/images/social_alok.jpg" alt="Modelo Alok — estilo praiano" loading="lazy" />
-          <span class="hero-banner-caption">Modelo Alok</span>
-        </div>
-        <div class="hero-banner-slide">
-          <img src="/images/social_praia.jpg" alt="Coleção Praia — lifestyle de verão" loading="lazy" />
-          <span class="hero-banner-caption">Coleção Praia</span>
-        </div>
-        <div class="hero-banner-slide">
-          <img src="/images/social_ciclista.jpg" alt="Linha Esportivo — para quem não para" loading="lazy" />
-          <span class="hero-banner-caption">Linha Esportivo</span>
-        </div>
-        <div class="hero-banner-slide">
-          <img src="/images/social_carro_preto.jpg" alt="TOP Sunglass — estilo urbano" loading="lazy" />
-          <span class="hero-banner-caption">Estilo Urbano</span>
-        </div>
-        <button class="hero-banner-prev" id="bannerPrev" aria-label="Foto anterior">&#8249;</button>
-        <button class="hero-banner-next" id="bannerNext" aria-label="Próxima foto">&#8250;</button>
-        <div class="hero-banner-dots" id="bannerDots">
-          <button class="hero-banner-dot is-active" aria-label="Foto 1"></button>
-          <button class="hero-banner-dot" aria-label="Foto 2"></button>
-          <button class="hero-banner-dot" aria-label="Foto 3"></button>
-          <button class="hero-banner-dot" aria-label="Foto 4"></button>
-          <button class="hero-banner-dot" aria-label="Foto 5"></button>
-        </div>
-      </div>
+  <div class="hero-banner" id="heroBanner">
+    <div class="hero-banner-slide is-active">
+      <img src="/images/social_carro_preto.jpg" alt="TOP Sunglass — estilo urbano" loading="eager" />
     </div>
-    <ul class="features">
-      <li><b>UV400</b> proteção total contra UVA e UVB</li>
-      <li><b>Acetato premium</b> leve e resistente</li>
-      <li><b>Dobradiças reforçadas</b> para o uso diário</li>
-      <li><b>Design atemporal</b> unissex</li>
-    </ul>
-    <nav class="collections-nav">
-      <a href="#classico">Clássico <span class="count">(11)</span></a>
-      <a href="#streetwear">Streetwear <span class="count">(7)</span></a>
-      <a href="#praia">Praia <span class="count">(4)</span></a>
-      <a href="#esportivo">Esportivo <span class="count">(6)</span></a>
-      
-    </nav>
+    <div class="hero-banner-slide">
+      <img src="/images/social_praia.jpg" alt="Coleção Praia — lifestyle de verão" loading="lazy" />
+    </div>
+    <div class="hero-banner-slide">
+      <img src="/images/social_ciclista.jpg" alt="Linha Esportivo — para quem não para" loading="lazy" />
+    </div>
+    <div class="hero-banner-slide">
+      <img src="/images/social_alok.jpg" alt="Modelo Alok — estilo praiano" loading="lazy" />
+    </div>
+    <div class="hero-banner-slide">
+      <img src="/images/p9_performance.jpg" alt="TOP Performance — lente vermelha espelhada" loading="lazy" />
+    </div>
+    <!-- text overlay -->
+    <div class="hero-banner-overlay">
+      <p class="brandmark">TOP SUNGLASS</p>
+      <h1>Para quem vive<br/><em>além</em> do comum.</h1>
+      <p class="lede">28 modelos em acetato premium e metal — clássico, streetwear, praia e esportivo.</p>
+      <span class="hero-promo">🔥 Compre 2, Leve 3</span>
+    </div>
+    <button class="hero-banner-prev" id="bannerPrev" aria-label="Foto anterior">&#8249;</button>
+    <button class="hero-banner-next" id="bannerNext" aria-label="Próxima foto">&#8250;</button>
+    <div class="hero-banner-dots" id="bannerDots">
+      <button class="hero-banner-dot is-active" aria-label="Foto 1"></button>
+      <button class="hero-banner-dot" aria-label="Foto 2"></button>
+      <button class="hero-banner-dot" aria-label="Foto 3"></button>
+      <button class="hero-banner-dot" aria-label="Foto 4"></button>
+      <button class="hero-banner-dot" aria-label="Foto 5"></button>
+    </div>
+  </div>
+  <div class="hero-below">
+    <div class="wrap">
+      <ul class="features">
+        <li><b>UV400</b> proteção total contra UVA e UVB</li>
+        <li><b>Acetato premium</b> leve e resistente</li>
+        <li><b>Compre 2, Leve 3</b> na compra de qualquer modelo</li>
+        <li><b>Design atemporal</b> unissex</li>
+      </ul>
+      <nav class="collections-nav">
+        <a href="#classico">Clássico <span class="count">(11)</span></a>
+        <a href="#streetwear">Streetwear <span class="count">(7)</span></a>
+        <a href="#praia">Praia <span class="count">(4)</span></a>
+        <a href="#esportivo">Esportivo <span class="count">(6)</span></a>
+      </nav>
+    </div>
   </div>
 </div>
 
