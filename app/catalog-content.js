@@ -313,6 +313,162 @@ export const catalogStyle = `
   .features li { list-style: none; display: flex; gap: 8px; align-items: baseline; }
   .features li b { color: var(--ink); font-weight: 700; }
 
+  /* ---------- PROMO PAGUE 2 LEVE 3 ---------- */
+  .promo-section {
+    padding: 60px 0 20px;
+    scroll-margin-top: 20px;
+  }
+  .promo-head {
+    border-top: 3px solid var(--gold);
+    padding-top: 28px;
+    margin-bottom: 32px;
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .promo-badge-big {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--gold);
+    color: #17110c;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 900;
+    font-size: 14px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 8px 18px;
+    border-radius: 999px;
+  }
+  .promo-head h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 38px;
+    margin: 0;
+  }
+  .promo-head h2 em { font-style: italic; color: var(--gold); }
+  .promo-head p {
+    margin: 0;
+    color: var(--ink-muted);
+    font-size: 15px;
+    flex-basis: 100%;
+    max-width: 60ch;
+  }
+  .promo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+  }
+  /* promo card — mesmo estilo mas com ribbon dourado */
+  .promo-card {
+    background: var(--surface);
+    border: 1px solid var(--gold);
+    border-radius: 6px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  .promo-ribbon {
+    position: absolute;
+    top: 12px;
+    left: -2px;
+    background: var(--gold);
+    color: #17110c;
+    font-size: 10.5px;
+    font-weight: 900;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 4px 10px 4px 12px;
+    border-radius: 0 3px 3px 0;
+    z-index: 2;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+  }
+  .promo-price-row {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .promo-price-tag {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .promo-price-kit {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 22px;
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
+  }
+  .promo-price-kit small {
+    font-size: 13px;
+    color: var(--ink-muted);
+    font-family: 'Manrope', sans-serif;
+    font-weight: 500;
+  }
+  .promo-cta {
+    align-self: flex-start;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    color: #f3ead9;
+    background: var(--gold);
+    border: none;
+    padding: 8px 14px;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: filter 0.15s;
+    white-space: nowrap;
+  }
+  .promo-cta:hover { filter: brightness(0.9); }
+  .promo-howto {
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 24px 28px;
+    margin: 36px 0 8px;
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .promo-howto-steps {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    flex: 1;
+  }
+  .promo-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .promo-step-num {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--gold);
+    color: #17110c;
+    font-weight: 900;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .promo-step-text strong { display: block; font-size: 14px; font-weight: 700; }
+  .promo-step-text span { font-size: 13px; color: var(--ink-muted); }
+  @media (max-width: 900px) {
+    .promo-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 560px) {
+    .promo-grid { grid-template-columns: 1fr; }
+  }
+
   /* ---------- COLLECTIONS ---------- */
   .collection { padding: 54px 0 10px; scroll-margin-top: 20px; }
   .collection-head {
@@ -670,7 +826,7 @@ export const catalogHtml = `<header class="site-header">
       <a href="#praia">Praia</a>
       <a href="#esportivo">Esportivo</a>
       <a href="#social">Lookbook</a>
-      <a href="#classico" class="highlight">🔥 Pague 2, Leve 3</a>
+      <a href="#promo" class="highlight">🔥 Pague 2, Leve 3</a>
     </nav>
     <a href="https://wa.me/5511999999999" class="header-wa" target="_blank" rel="noopener">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.121 1.531 5.856L.057 23.852a.5.5 0 0 0 .614.614l6.057-1.49A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.907 0-3.695-.498-5.248-1.37l-.373-.214-3.865.95.978-3.79-.234-.388A9.964 9.964 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
@@ -725,6 +881,7 @@ export const catalogHtml = `<header class="site-header">
         <li><b>Design atemporal</b> unissex</li>
       </ul>
       <nav class="collections-nav">
+        <a href="#promo" style="color:var(--gold);font-weight:800;">🔥 Pague 2, Leve 3</a>
         <a href="#classico">Clássico <span class="count">(11)</span></a>
         <a href="#streetwear">Streetwear <span class="count">(7)</span></a>
         <a href="#praia">Praia <span class="count">(4)</span></a>
@@ -735,7 +892,167 @@ export const catalogHtml = `<header class="site-header">
 </div>
 
 <div class="wrap">
-  
+
+  <section class="promo-section" id="promo">
+    <div class="promo-head">
+      <span class="promo-badge-big">🔥 Oferta especial</span>
+      <h2>Pague 2, <em>Leve 3</em></h2>
+      <p>Escolha qualquer 2 modelos e leve o 3º de graça — monta o kit que quiser, mistura estilos, presenteia quem você ama. Válido para toda a coleção.</p>
+    </div>
+
+    <div class="promo-howto">
+      <div class="promo-howto-steps">
+        <div class="promo-step">
+          <div class="promo-step-num">1</div>
+          <div class="promo-step-text">
+            <strong>Escolha 3 modelos</strong>
+            <span>Pode misturar qualquer linha</span>
+          </div>
+        </div>
+        <div class="promo-step">
+          <div class="promo-step-num">2</div>
+          <div class="promo-step-text">
+            <strong>Fale no WhatsApp</strong>
+            <span>Monte seu kit com a gente</span>
+          </div>
+        </div>
+        <div class="promo-step">
+          <div class="promo-step-num">3</div>
+          <div class="promo-step-text">
+            <strong>Pague só 2</strong>
+            <span>O mais barato sai de graça</span>
+          </div>
+        </div>
+      </div>
+      <a href="https://wa.me/5511940249381?text=Oi%21%20Quero%20montar%20meu%20kit%20Pague%202%20Leve%203%20da%20TOP%20Sunglass%21" class="promo-cta" target="_blank" rel="noopener">Montar meu kit agora</a>
+    </div>
+
+    <div class="promo-grid">
+
+      <article class="promo-card">
+        <span class="promo-ribbon">Pague 2 Leve 3</span>
+        <div class="card-img">
+          <button type="button" class="zoom-trigger" data-name="TOP Bauhaus" aria-label="Ver foto de TOP Bauhaus">
+            <img src="/images/p1_bauhaus.jpg" alt="TOP Bauhaus" loading="lazy" />
+          </button>
+        </div>
+        <div class="card-body">
+          <h3>TOP Bauhaus</h3>
+          <p class="desc">Clássico em acetato tartaruga. O favorito da coleção.</p>
+          <div class="buy-row">
+            <div class="promo-price-row">
+              <span class="promo-price-tag">Kit 3 und.</span>
+              <span class="promo-price-kit">R$ 139,80 <small>/ 3 pares</small></span>
+            </div>
+            <a class="promo-cta" href="https://wa.me/5511940249381?text=Quero%20o%20kit%20Pague%202%20Leve%203%20com%20TOP%20Bauhaus!" target="_blank" rel="noopener">Pegar kit</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="promo-card">
+        <span class="promo-ribbon">Pague 2 Leve 3</span>
+        <div class="card-img">
+          <button type="button" class="zoom-trigger" data-name="TOP Alok" aria-label="Ver foto de TOP Alok">
+            <img src="/images/p29_alok.jpg" alt="TOP Alok" loading="lazy" />
+          </button>
+        </div>
+        <div class="card-body">
+          <h3>TOP Alok</h3>
+          <p class="desc">O óculos da vibe. Streetwear raiz, sem esforço.</p>
+          <div class="buy-row">
+            <div class="promo-price-row">
+              <span class="promo-price-tag">Kit 3 und.</span>
+              <span class="promo-price-kit">R$ 139,80 <small>/ 3 pares</small></span>
+            </div>
+            <a class="promo-cta" href="https://wa.me/5511940249381?text=Quero%20o%20kit%20Pague%202%20Leve%203%20com%20TOP%20Alok!" target="_blank" rel="noopener">Pegar kit</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="promo-card">
+        <span class="promo-ribbon">Pague 2 Leve 3</span>
+        <div class="card-img">
+          <button type="button" class="zoom-trigger" data-name="TOP Aviador Cinza" aria-label="Ver foto de TOP Aviador">
+            <img src="/images/p6_aviador_cinza.jpg" alt="TOP Aviador Cinza" loading="lazy" />
+          </button>
+        </div>
+        <div class="card-body">
+          <h3>TOP Aviador</h3>
+          <p class="desc">O clássico de todos os tempos em cinza intemporal.</p>
+          <div class="buy-row">
+            <div class="promo-price-row">
+              <span class="promo-price-tag">Kit 3 und.</span>
+              <span class="promo-price-kit">R$ 139,80 <small>/ 3 pares</small></span>
+            </div>
+            <a class="promo-cta" href="https://wa.me/5511940249381?text=Quero%20o%20kit%20Pague%202%20Leve%203%20com%20TOP%20Aviador!" target="_blank" rel="noopener">Pegar kit</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="promo-card">
+        <span class="promo-ribbon">Pague 2 Leve 3</span>
+        <div class="card-img">
+          <button type="button" class="zoom-trigger" data-name="TOP Performance" aria-label="Ver foto de TOP Performance">
+            <img src="/images/p9_performance.jpg" alt="TOP Performance" loading="lazy" />
+          </button>
+        </div>
+        <div class="card-body">
+          <h3>TOP Performance</h3>
+          <p class="desc">Lente vermelha espelhada, feita pra quem vai além.</p>
+          <div class="buy-row">
+            <div class="promo-price-row">
+              <span class="promo-price-tag">Kit 3 und.</span>
+              <span class="promo-price-kit">R$ 139,80 <small>/ 3 pares</small></span>
+            </div>
+            <a class="promo-cta" href="https://wa.me/5511940249381?text=Quero%20o%20kit%20Pague%202%20Leve%203%20com%20TOP%20Performance!" target="_blank" rel="noopener">Pegar kit</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="promo-card">
+        <span class="promo-ribbon">Pague 2 Leve 3</span>
+        <div class="card-img">
+          <button type="button" class="zoom-trigger" data-name="TOP Maré" aria-label="Ver foto de TOP Maré">
+            <img src="/images/p19_mare.jpg" alt="TOP Maré" loading="lazy" />
+          </button>
+        </div>
+        <div class="card-body">
+          <h3>TOP Maré</h3>
+          <p class="desc">Praia, liberdade e sal — o espírito carioca em acetato.</p>
+          <div class="buy-row">
+            <div class="promo-price-row">
+              <span class="promo-price-tag">Kit 3 und.</span>
+              <span class="promo-price-kit">R$ 139,80 <small>/ 3 pares</small></span>
+            </div>
+            <a class="promo-cta" href="https://wa.me/5511940249381?text=Quero%20o%20kit%20Pague%202%20Leve%203%20com%20TOP%20Mar%C3%A9!" target="_blank" rel="noopener">Pegar kit</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="promo-card">
+        <span class="promo-ribbon">Pague 2 Leve 3</span>
+        <div class="card-img">
+          <button type="button" class="zoom-trigger" data-name="TOP Jaguar" aria-label="Ver foto de TOP Jaguar">
+            <img src="/images/p14_jaguar_marrom.jpg" alt="TOP Jaguar" loading="lazy" />
+          </button>
+        </div>
+        <div class="card-body">
+          <h3>TOP Jaguar</h3>
+          <p class="desc">Degradê marrom, atitude streetwear com toque sofisticado.</p>
+          <div class="buy-row">
+            <div class="promo-price-row">
+              <span class="promo-price-tag">Kit 3 und.</span>
+              <span class="promo-price-kit">R$ 139,80 <small>/ 3 pares</small></span>
+            </div>
+            <a class="promo-cta" href="https://wa.me/5511940249381?text=Quero%20o%20kit%20Pague%202%20Leve%203%20com%20TOP%20Jaguar!" target="_blank" rel="noopener">Pegar kit</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+    <p style="text-align:center;color:var(--ink-muted);font-size:13px;margin:24px 0 0;">* Todos os 28 modelos participam da promoção. Monte o kit que quiser no WhatsApp.</p>
+  </section>
+
     <section class="collection" id="classico">
       <div class="collection-head">
         <h2>Clássico</h2>
