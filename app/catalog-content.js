@@ -942,7 +942,7 @@ export const catalogHtml = `<header class="site-header">
           <div class="buy-row">
             <div class="promo-price-row">
               <span class="promo-price-tag">Kit 3 und.</span>
-              <span class="promo-price-kit">R$ 139,80 <small>/ 3 pares</small></span>
+              <span class="promo-price-kit">R$ 99,90 <small>/ 3 pares</small></span>
             </div>
             <a class="promo-cta" href="https://wa.me/5511940249381?text=Quero%20o%20kit%20Pague%202%20Leve%203%20com%20TOP%20Bauhaus!" target="_blank" rel="noopener">Pegar kit</a>
           </div>
@@ -962,7 +962,7 @@ export const catalogHtml = `<header class="site-header">
           <div class="buy-row">
             <div class="promo-price-row">
               <span class="promo-price-tag">Kit 3 und.</span>
-              <span class="promo-price-kit">R$ 139,80 <small>/ 3 pares</small></span>
+              <span class="promo-price-kit">R$ 99,90 <small>/ 3 pares</small></span>
             </div>
             <a class="promo-cta" href="https://wa.me/5511940249381?text=Quero%20o%20kit%20Pague%202%20Leve%203%20com%20TOP%20Alok!" target="_blank" rel="noopener">Pegar kit</a>
           </div>
@@ -982,7 +982,7 @@ export const catalogHtml = `<header class="site-header">
           <div class="buy-row">
             <div class="promo-price-row">
               <span class="promo-price-tag">Kit 3 und.</span>
-              <span class="promo-price-kit">R$ 139,80 <small>/ 3 pares</small></span>
+              <span class="promo-price-kit">R$ 99,90 <small>/ 3 pares</small></span>
             </div>
             <a class="promo-cta" href="https://wa.me/5511940249381?text=Quero%20o%20kit%20Pague%202%20Leve%203%20com%20TOP%20Aviador!" target="_blank" rel="noopener">Pegar kit</a>
           </div>
@@ -1002,7 +1002,7 @@ export const catalogHtml = `<header class="site-header">
           <div class="buy-row">
             <div class="promo-price-row">
               <span class="promo-price-tag">Kit 3 und.</span>
-              <span class="promo-price-kit">R$ 139,80 <small>/ 3 pares</small></span>
+              <span class="promo-price-kit">R$ 99,90 <small>/ 3 pares</small></span>
             </div>
             <a class="promo-cta" href="https://wa.me/5511940249381?text=Quero%20o%20kit%20Pague%202%20Leve%203%20com%20TOP%20Performance!" target="_blank" rel="noopener">Pegar kit</a>
           </div>
@@ -1022,7 +1022,7 @@ export const catalogHtml = `<header class="site-header">
           <div class="buy-row">
             <div class="promo-price-row">
               <span class="promo-price-tag">Kit 3 und.</span>
-              <span class="promo-price-kit">R$ 139,80 <small>/ 3 pares</small></span>
+              <span class="promo-price-kit">R$ 99,90 <small>/ 3 pares</small></span>
             </div>
             <a class="promo-cta" href="https://wa.me/5511940249381?text=Quero%20o%20kit%20Pague%202%20Leve%203%20com%20TOP%20Mar%C3%A9!" target="_blank" rel="noopener">Pegar kit</a>
           </div>
@@ -1042,7 +1042,7 @@ export const catalogHtml = `<header class="site-header">
           <div class="buy-row">
             <div class="promo-price-row">
               <span class="promo-price-tag">Kit 3 und.</span>
-              <span class="promo-price-kit">R$ 139,80 <small>/ 3 pares</small></span>
+              <span class="promo-price-kit">R$ 99,90 <small>/ 3 pares</small></span>
             </div>
             <a class="promo-cta" href="https://wa.me/5511940249381?text=Quero%20o%20kit%20Pague%202%20Leve%203%20com%20TOP%20Jaguar!" target="_blank" rel="noopener">Pegar kit</a>
           </div>
