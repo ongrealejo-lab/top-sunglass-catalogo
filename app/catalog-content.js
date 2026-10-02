@@ -47,6 +47,18 @@ export const catalogStyle = `
 
   .wrap { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
 
+  /* ---------- ANNOUNCEMENT BAR ---------- */
+  .announce-bar {
+    background: var(--gold);
+    color: #17110c;
+    text-align: center;
+    padding: 9px 24px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+  }
+  .announce-bar strong { font-weight: 900; }
+
   /* ---------- HEADER ---------- */
   .site-header {
     background: var(--ink);
@@ -819,7 +831,8 @@ export const catalogStyle = `
   }
 `;
 
-export const catalogHtml = `<header class="site-header">
+export const catalogHtml = `<div class="announce-bar">Aproveite: comprando a partir de <strong>R$ 99,90</strong>, você ganha <strong>FRETE GRÁTIS</strong> na sua compra! 🚚</div>
+<header class="site-header">
   <div class="site-header-inner">
     <a href="#" class="site-logo">
       <img src="/images/logo_top_sunglass.png" alt="TOP Sunglass" class="site-logo-img" />
