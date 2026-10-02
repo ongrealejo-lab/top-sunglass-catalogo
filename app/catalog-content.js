@@ -65,16 +65,17 @@ export const catalogStyle = `
     height: 58px;
   }
   .site-logo {
-    font-family: 'Fraunces', serif;
-    font-weight: 700;
-    font-size: 20px;
-    letter-spacing: 0.04em;
-    color: #f3ead9;
     text-decoration: none;
-    white-space: nowrap;
     flex-shrink: 0;
+    display: flex;
+    align-items: center;
   }
-  .site-logo span { color: var(--gold); }
+  .site-logo-img {
+    height: 36px;
+    width: auto;
+    display: block;
+    filter: invert(1);
+  }
   .header-nav {
     display: flex;
     align-items: center;
@@ -819,7 +820,9 @@ export const catalogStyle = `
 
 export const catalogHtml = `<header class="site-header">
   <div class="site-header-inner">
-    <a href="#" class="site-logo">TOP <span>Sunglass</span></a>
+    <a href="#" class="site-logo">
+      <img src="/images/logo_top_sunglass.png" alt="TOP Sunglass" class="site-logo-img" />
+    </a>
     <nav class="header-nav">
       <a href="#classico">Clássico</a>
       <a href="#streetwear">Streetwear</a>
