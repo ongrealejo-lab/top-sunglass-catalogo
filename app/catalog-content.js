@@ -1074,7 +1074,7 @@ export const catalogHtml = `<div class="announce-bar">Aproveite: comprando a par
         <span class="promo-ribbon">Pague 2 Leve 3</span>
         <div class="card-img">
           <button type="button" class="zoom-trigger" data-name="TOP Jaguar" aria-label="Ver foto de TOP Jaguar">
-            <img src="/images/p14_jaguar_marrom.jpg" alt="TOP Jaguar" loading="lazy" />
+            <img src="/images/p20_jaguar_marrom.jpg" alt="TOP Jaguar" loading="lazy" />
           </button>
         </div>
         <div class="card-body">
