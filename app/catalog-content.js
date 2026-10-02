@@ -210,6 +210,11 @@ export const catalogStyle = `
     opacity: 1;
     pointer-events: auto;
   }
+  .hero-banner-slide picture {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
   .hero-banner-slide img {
     width: 100%;
     height: 100%;
@@ -840,7 +845,7 @@ export const catalogStyle = `
     .grid { grid-template-columns: repeat(2, 1fr); }
   }
   @media (max-width: 560px) {
-    .hero-banner { height: 80vw; min-height: 300px; max-height: 560px; }
+    .hero-banner { height: 120vw; min-height: 380px; max-height: 640px; }
     .hero-banner-slide img { object-fit: cover; object-position: center top; }
     .hero-banner::after { background: linear-gradient(180deg, rgba(15,10,6,0.2) 0%, rgba(15,10,6,0.75) 100%); }
     .hero-banner-overlay { justify-content: flex-end; padding: 0 20px 28px; max-width: 100%; }
