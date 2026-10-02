@@ -840,8 +840,8 @@ export const catalogStyle = `
     .grid { grid-template-columns: repeat(2, 1fr); }
   }
   @media (max-width: 560px) {
-    .hero-banner { height: 56vh; min-height: 300px; }
-    .hero-banner-slide img { object-fit: contain; object-position: center; background: #111; }
+    .hero-banner { height: 80vw; min-height: 300px; max-height: 560px; }
+    .hero-banner-slide img { object-fit: cover; object-position: center top; }
     .hero-banner::after { background: linear-gradient(180deg, rgba(15,10,6,0.2) 0%, rgba(15,10,6,0.75) 100%); }
     .hero-banner-overlay { justify-content: flex-end; padding: 0 20px 28px; max-width: 100%; }
     .hero h1 { font-size: clamp(28px, 8vw, 44px); }
@@ -882,7 +882,10 @@ export const catalogHtml = `<div class="announce-bar">Aproveite: comprando a par
       <img src="/images/banner_01_pague2leve3.png" alt="Pague 2 Leve 3 — Top Sunglass" loading="eager" />
     </div>
     <div class="hero-banner-slide" data-no-overlay>
-      <img src="/images/banner_02_estilo_que_marca.png" alt="Estilo Que Marca — Top Sunglass" loading="lazy" />
+      <picture>
+        <source media="(max-width: 560px)" srcset="/images/banner_02_mobile.png" />
+        <img src="/images/banner_02_estilo_que_marca.png" alt="Estilo Que Marca — Top Sunglass" loading="lazy" />
+      </picture>
     </div>
     <!-- text overlay -->
     <div class="hero-banner-overlay">
