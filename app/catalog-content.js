@@ -75,6 +75,7 @@ export const catalogStyle = `
     width: auto;
     display: block;
     filter: invert(1);
+    mix-blend-mode: screen;
   }
   .header-nav {
     display: flex;
