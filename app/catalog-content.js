@@ -548,9 +548,16 @@ export const catalogStyle = `
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.5s ease;
+    transition: transform 0.5s ease, opacity 0.4s ease;
   }
-  .card:hover .card-img img { transform: scale(1.045); }
+  .card-img img.img-alt {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+  }
+  .card-img { position: relative; }
+  .card:hover .card-img img.img-main { opacity: 0; transform: scale(1.045); }
+  .card:hover .card-img img.img-alt  { opacity: 1; transform: scale(1.045); }
 
   /* ---------- LIGHTBOX ---------- */
   .lightbox {
