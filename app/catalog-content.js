@@ -744,8 +744,8 @@ export const catalogStyle = `
     flex: 1;
     margin: 0;
   }
-  .dep-text::before { content: '\201C'; }
-  .dep-text::after  { content: '\201D'; }
+  .dep-text::before { content: '“'; }
+  .dep-text::after  { content: '”'; }
   .dep-author {
     display: flex;
     align-items: center;
