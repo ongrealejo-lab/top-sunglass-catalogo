@@ -859,21 +859,6 @@ export const catalogHtml = `<div class="announce-bar">Aproveite: comprando a par
     <div class="hero-banner-slide" data-no-overlay>
       <img src="/images/banner_02_estilo_que_marca.png" alt="Estilo Que Marca — Top Sunglass" loading="lazy" />
     </div>
-    <div class="hero-banner-slide">
-      <img src="/images/banner_03_carro_preto.jpg" alt="TOP Sunglass — estilo urbano" loading="lazy" />
-    </div>
-    <div class="hero-banner-slide">
-      <img src="/images/banner_04_praia.jpg" alt="Coleção Praia — lifestyle de verão" loading="lazy" />
-    </div>
-    <div class="hero-banner-slide">
-      <img src="/images/banner_05_ciclista.jpg" alt="Linha Esportivo — para quem não para" loading="lazy" />
-    </div>
-    <div class="hero-banner-slide">
-      <img src="/images/banner_06_alok.jpg" alt="Modelo Alok — estilo praiano" loading="lazy" />
-    </div>
-    <div class="hero-banner-slide">
-      <img src="/images/banner_07_performance.jpg" alt="TOP Performance — lente vermelha espelhada" loading="lazy" />
-    </div>
     <!-- text overlay -->
     <div class="hero-banner-overlay">
       <p class="brandmark">TOP SUNGLASS</p>
@@ -886,11 +871,6 @@ export const catalogHtml = `<div class="announce-bar">Aproveite: comprando a par
     <div class="hero-banner-dots" id="bannerDots">
       <button class="hero-banner-dot is-active" aria-label="Foto 1"></button>
       <button class="hero-banner-dot" aria-label="Foto 2"></button>
-      <button class="hero-banner-dot" aria-label="Foto 3"></button>
-      <button class="hero-banner-dot" aria-label="Foto 4"></button>
-      <button class="hero-banner-dot" aria-label="Foto 5"></button>
-      <button class="hero-banner-dot" aria-label="Foto 6"></button>
-      <button class="hero-banner-dot" aria-label="Foto 7"></button>
     </div>
   </div>
   <div class="hero-below">
