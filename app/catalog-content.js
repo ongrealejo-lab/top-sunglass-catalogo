@@ -890,8 +890,11 @@ export const catalogHtml = `<div class="announce-bar">Aproveite: comprando a par
 </header>
 <div class="hero">
   <div class="hero-banner" id="heroBanner">
-    <div class="hero-banner-slide is-active" data-no-overlay>
-      <img src="/images/banner_01_pague2leve3.png" alt="Pague 2 Leve 3 — Top Sunglass" loading="eager" />
+    <div class="hero-banner-slide is-active">
+      <img src="/images/hero-cover.jpg" alt="TOP Sunglass — As flores que nós plantamos, todos vão ver quando florescer." loading="eager" style="object-position: center top;" />
+    </div>
+    <div class="hero-banner-slide" data-no-overlay>
+      <img src="/images/banner_01_pague2leve3.png" alt="Pague 2 Leve 3 — Top Sunglass" loading="lazy" />
     </div>
     <div class="hero-banner-slide" data-no-overlay>
       <picture>
