@@ -1593,10 +1593,31 @@ export const catalogHtml = `<div class="announce-bar">Aproveite: comprando a par
         <h3>TOP Velocity</h3>
         <p class="desc">Máscara cristal sem aro, lente espelhada azul-violeta degradê.</p>
         <p class="tag">&ldquo;Visão que acompanha seu ritmo.&rdquo;</p>
-        
+
         <div class="buy-row">
           <span class="price">R$ 69,90</span>
           <a class="pill" href="https://wa.me/5511940249381?text=Oi%21%20Tenho%20interesse%20no%20TOP%20Velocity%20%28R%24%2069%2C90%29%20da%20TOP%20Sunglass." target="_blank" rel="noopener">Comprar no WhatsApp</a>
+        </div>
+      </div>
+    </article>
+    <article class="card" id="venezia-card">
+      <div class="card-img">
+        <button type="button" class="zoom-trigger" data-name="TOP Venezia" aria-label="Ver foto inteira de TOP Venezia" id="venezia-zoom">
+          <img src="/images/p31_venezia_preto.jpg" alt="Óculos de sol TOP Venezia" loading="lazy" id="venezia-img" />
+        </button>
+      </div>
+      <div class="card-body">
+        <h3>TOP Venezia</h3>
+        <p class="desc">Arredondado clássico, detalhe metálico na dobradiça. 3 cores.</p>
+        <p class="tag">&ldquo;O clássico que nunca sai de moda.&rdquo;</p>
+        <div class="color-swatches" style="display:flex;gap:8px;margin:8px 0 12px;">
+          <button type="button" onclick="(function(){var i=document.getElementById('venezia-img');i.src='/images/p31_venezia_preto.jpg';i.alt='TOP Venezia — Preto';document.getElementById('venezia-zoom').setAttribute('data-name','TOP Venezia — Preto');this.parentElement.querySelectorAll('.swatch-btn').forEach(function(b){b.style.outline='none'});this.style.outline='3px solid #333';})()" class="swatch-btn" title="Preto" style="width:24px;height:24px;border-radius:50%;background:#111;border:2px solid #ccc;cursor:pointer;outline:3px solid #333;"></button>
+          <button type="button" onclick="(function(){var i=document.getElementById('venezia-img');i.src='/images/p31_venezia_marrom.jpg';i.alt='TOP Venezia — Marrom';document.getElementById('venezia-zoom').setAttribute('data-name','TOP Venezia — Marrom');this.parentElement.querySelectorAll('.swatch-btn').forEach(function(b){b.style.outline='none'});this.style.outline='3px solid #333';})()" class="swatch-btn" title="Marrom" style="width:24px;height:24px;border-radius:50%;background:#7B3F00;border:2px solid #ccc;cursor:pointer;"></button>
+          <button type="button" onclick="(function(){var i=document.getElementById('venezia-img');i.src='/images/p31_venezia_tartaruga.jpg';i.alt='TOP Venezia — Tartaruga';document.getElementById('venezia-zoom').setAttribute('data-name','TOP Venezia — Tartaruga');this.parentElement.querySelectorAll('.swatch-btn').forEach(function(b){b.style.outline='none'});this.style.outline='3px solid #333';})()" class="swatch-btn" title="Tartaruga" style="width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#8B4513 40%,#D2691E 60%,#5C3317 80%);border:2px solid #ccc;cursor:pointer;"></button>
+        </div>
+        <div class="buy-row">
+          <span class="price">R$ 69,90</span>
+          <a class="pill" href="https://wa.me/5511940249381?text=Oi%21%20Tenho%20interesse%20no%20TOP%20Venezia%20%28R%24%2069%2C90%29%20da%20TOP%20Sunglass." target="_blank" rel="noopener">Comprar no WhatsApp</a>
         </div>
       </div>
     </article></div>
