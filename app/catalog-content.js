@@ -297,14 +297,14 @@ export const catalogStyle = `
   .hero-banner-next:hover { background: rgba(23,17,12,0.8); }
   .hero-below {
     border-top: 1px solid var(--line);
-    padding: 18px 0 0;
+    padding: 10px 0 0;
   }
   .collections-nav {
     display: flex;
     flex-wrap: wrap;
     gap: 10px 22px;
-    padding: 22px 0 24px;
-    margin-top: 36px;
+    padding: 14px 0 16px;
+    margin-top: 10px;
     border-top: 1px solid var(--line);
     font-size: 13px;
     font-weight: 600;
@@ -325,7 +325,7 @@ export const catalogStyle = `
     display: flex;
     flex-wrap: wrap;
     gap: 10px 30px;
-    padding: 18px 0 40px;
+    padding: 12px 0 20px;
     font-size: 13.5px;
     color: var(--ink-muted);
   }
