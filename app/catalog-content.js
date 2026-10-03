@@ -334,7 +334,7 @@ export const catalogStyle = `
 
   /* ---------- PROMO PAGUE 2 LEVE 3 ---------- */
   .promo-section {
-    padding: 60px 0 20px;
+    padding: 20px 0 20px;
     scroll-margin-top: 20px;
   }
   .promo-head {
@@ -924,7 +924,6 @@ export const catalogHtml = `<div class="announce-bar">Aproveite: comprando a par
         <li><b>Design atemporal</b> unissex</li>
       </ul>
       <nav class="collections-nav">
-        <a href="#promo" style="color:var(--gold);font-weight:800;">🔥 Pague 2, Leve 3</a>
         <a href="#classico">Clássico <span class="count">(11)</span></a>
         <a href="#streetwear">Streetwear <span class="count">(7)</span></a>
         <a href="#praia">Praia <span class="count">(4)</span></a>
