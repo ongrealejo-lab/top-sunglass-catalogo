@@ -921,7 +921,6 @@ export const catalogHtml = `<div class="announce-bar">Aproveite: comprando a par
       <ul class="features">
         <li><b>UV400</b> proteção total contra UVA e UVB</li>
         <li><b>Acetato premium</b> leve e resistente</li>
-        <li><b>Compre 2, Leve 3</b> na compra de qualquer modelo</li>
         <li><b>Design atemporal</b> unissex</li>
       </ul>
       <nav class="collections-nav">
