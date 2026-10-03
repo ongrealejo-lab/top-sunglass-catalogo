@@ -894,12 +894,12 @@ export const catalogHtml = `<div class="announce-bar">Aproveite: comprando a par
       <img src="/images/hero-cover.jpg" alt="TOP Sunglass — As flores que nós plantamos, todos vão ver quando florescer." loading="eager" style="object-position: center top;" />
     </div>
     <div class="hero-banner-slide" data-no-overlay>
-      <img src="/images/banner_01_pague2leve3.png" alt="Pague 2 Leve 3 — Top Sunglass" loading="lazy" />
+      <img src="/images/banner_01_pague2leve3.png" alt="Pague 2 Leve 3 — Top Sunglass" loading="eager" />
     </div>
     <div class="hero-banner-slide" data-no-overlay>
       <picture>
         <source media="(max-width: 560px)" srcset="/images/banner_02_mobile.png" />
-        <img src="/images/banner_02_estilo_que_marca.png" alt="Estilo Que Marca — Top Sunglass" loading="lazy" />
+        <img src="/images/banner_02_estilo_que_marca.png" alt="Estilo Que Marca — Top Sunglass" loading="eager" />
       </picture>
     </div>
     <!-- text overlay -->
@@ -907,7 +907,6 @@ export const catalogHtml = `<div class="announce-bar">Aproveite: comprando a par
       <p class="brandmark">TOP SUNGLASS</p>
       <h1>Para quem vive<br/><em>além</em> do comum.</h1>
       <p class="lede">28 modelos em acetato premium e metal — clássico, streetwear, praia e esportivo.</p>
-      <span class="hero-promo">🔥 Compre 2, Leve 3</span>
     </div>
     <button class="hero-banner-prev" id="bannerPrev" aria-label="Foto anterior">&#8249;</button>
     <button class="hero-banner-next" id="bannerNext" aria-label="Próxima foto">&#8250;</button>
